@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL KHAWAJA'S VAPE STORE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #1a1a2e;
+            color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 3px solid #e94560;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 42px;
+            color: #e94560;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .header h2 {
+            font-size: 22px;
+            color: #f5f5f5;
+            margin-top: 5px;
+        }
+        .columns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        .section {
+            background: rgba(233, 69, 96, 0.1);
+            border: 2px solid;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .section.oxva { border-color: #e94560; }
+        .section.geekvape { border-color: #00d9ff; }
+        .section.uwell { border-color: #ffd700; }
+        .section.vaporesso { border-color: #00ff88; }
+        .section.voopoo { border-color: #ff6b6b; }
+        .section.accessories { border-color: #c084fc; }
+        .section.ripe { border-color: #fbbf24; }
+        .section.disposables { border-color: #e94560; }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .oxva .section-title { color: #e94560; background: rgba(233, 69, 96, 0.2); }
+        .geekvape .section-title { color: #00d9ff; background: rgba(0, 217, 255, 0.2); }
+        .uwell .section-title { color: #ffd700; background: rgba(255, 215, 0, 0.2); }
+        .vaporesso .section-title { color: #00ff88; background: rgba(0, 255, 136, 0.2); }
+        .voopoo .section-title { color: #ff6b6b; background: rgba(255, 107, 107, 0.2); }
+        .accessories .section-title { color: #c084fc; background: rgba(192, 132, 252, 0.2); }
+        .ripe .section-title { color: #fbbf24; background: rgba(251, 191, 36, 0.2); }
+        .disposables .section-title { color: #e94560; background: rgba(233, 69, 96, 0.2); }
+
+        .sub-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #e94560;
+            margin: 10px 0 5px 0;
+            font-style: italic;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            color: #f5f5f5;
+        }
+        .item-price {
+            color: #e94560;
+            font-weight: bold;
+            min-width: 80px;
+            text-align: right;
+        }
+        .flavor-list {
+            padding-left: 15px;
+        }
+        .flavor-list .item {
+            font-size: 12px;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 20px;
+            border-top: 2px solid #e94560;
+        }
+        .footer p {
+            font-size: 18px;
+            color: #e94560;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .contact {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 10px;
+            border: 2px solid #e94560;
+        }
+        .contact h3 {
+            color: #e94560;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .contact a {
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>EL KHAWAJA'S</h1>
+            <h2>VAPE STORE MENU</h2>
+        </div>
+
+        <div class="contact">
+            <h3>📞 Contact Us on WhatsApp</h3>
+            <p style="color: #f5f5f5; margin: 5px 0;">Click the button below to chat with us directly!</p>
+            <a href="https://wa.me/201032045141" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
+        </div>
+
+        <div class="columns">
+            <!-- COLUMN 1 -->
+            <div class="column">
+                <div class="section oxva">
+                    <div class="section-title">OXVA</div>
+                    <div class="sub-title">PODS / DEVICES</div>
+                    <div class="item"><span class="item-name">Nexlim Kit</span><span class="item-price">1,200 L.E</span></div>
+                    <div class="item"><span class="item-name">Xlim Pro 3 Ultra</span><span class="item-price">1,200 L.E</span></div>
+                    <div class="item"><span class="item-name">Xlim Pro 3</span><span class="item-price">1,150 L.E</span></div>
+                    <div class="item"><span class="item-name">Sq Pro</span><span class="item-price">550 L.E</span></div>
+                    <div class="item"><span class="item-name">Nexlim Go</span><span class="item-price">625 L.E</span></div>
+                    <div class="item"><span class="item-name">Xlim Go 2 (w/ Lanyard)</span><span class="item-price">550 L.E</span></div>
+                    <div class="item"><span class="item-name">Xlim Go Lite</span><span class="item-price">450 L.E</span></div>
+                    <div class="sub-title">CARTRIDGES</div>
+                    <div class="item"><span class="item-name">Xlim 2ml 0.6/0.8/1.2Ω</span><span class="item-price">325 L.E</span></div>
+                    <div class="item"><span class="item-name">Xlim 3ml 0.6/0.8Ω</span><span class="item-price">400 L.E</span></div>
+                    <div class="item"><span class="item-name">Nexlim Cart 0.6/0.8/1.2Ω</span><span class="item-price">410 L.E</span></div>
+                </div>
+
+                <div class="section geekvape">
+                    <div class="section-title">GEEKVAPE</div>
+                    <div class="sub-title">PODS / DEVICES</div>
+                    <div class="item"><span class="item-name">Sonder Q2</span><span class="item-price">475 L.E</span></div>
+                    <div class="sub-title">CARTRIDGES</div>
+                    <div class="item"><span class="item-name">Sonder Q Cart 0.6/0.8/1.2Ω</span><span class="item-price">375 L.E</span></div>
+                </div>
+
+                <div class="section uwell">
+                    <div class="section-title">UWELL</div>
+                    <div class="sub-title">PODS / DEVICES</div>
+                    <div class="item"><span class="item-name">G5 Lite Koko</span><span class="item-price">600 L.E</span></div>
+                    <div class="item"><span class="item-name">G5 Lite</span><span class="item-price">550 L.E</span></div>
+                    <div class="item"><span class="item-name">G5 Lite Limited</span><span class="item-price">550 L.E</span></div>
+                    <div class="item"><span class="item-name">G4 Pro Koko</span><span class="item-price">1,050 L.E</span></div>
+                    <div class="item"><span class="item-name">G4 Mini</span><span class="item-price">450 L.E</span></div>
+                    <div class="item"><span class="item-name">G4 Pro</span><span class="item-price">1,100 L.E</span></div>
+                    <div class="item"><span class="item-name">G3 Lite</span><span class="item-price">450 L.E</span></div>
+                    <div class="sub-title">CARTRIDGES</div>
+                    <div class="item"><span class="item-name">G4 Cart 0.6Ω (6 pack)</span><span class="item-price">760 L.E</span></div>
+                    <div class="item"><span class="item-name">G4 Cart 0.8Ω (6 pack)</span><span class="item-price">760 L.E</span></div>
+                    <div class="item"><span class="item-name">G3 Cart 0.9Ω</span><span class="item-price">460 L.E</span></div>
+                </div>
+
+                <div class="section accessories">
+                    <div class="section-title">ACCESSORIES</div>
+                    <div class="item"><span class="item-name">Bosh Battery</span><span class="item-price">225 L.E</span></div>
+                    <div class="item"><span class="item-name">Lanyard</span><span class="item-price">50 L.E</span></div>
+                </div>
+
+                <div class="section ripe">
+                    <div class="section-title">RIPE VAPE (50ml)</div>
+                    <div class="item"><span class="item-name">All Flavors</span><span class="item-price">450 L.E</span></div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">VCT Bold (12 & 18mg)</span></div>
+                        <div class="item"><span class="item-name">VCT (12mg)</span></div>
+                        <div class="item"><span class="item-name">Platinum Tobacco</span></div>
+                        <div class="item"><span class="item-name">VCT Sweet Almond</span></div>
+                        <div class="item"><span class="item-name">VCT Black</span></div>
+                        <div class="item"><span class="item-name">VCS</span></div>
+                        <div class="item"><span class="item-name">Coffee Tobacco</span></div>
+                        <div class="item"><span class="item-name">Tobacco Cream</span></div>
+                        <div class="item"><span class="item-name">VCT Pistachio</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 2 -->
+            <div class="column">
+                <div class="section vaporesso">
+                    <div class="section-title">VAPORESSO</div>
+                    <div class="sub-title">PODS / DEVICES</div>
+                    <div class="item"><span class="item-name">Vipe SE 2</span><span class="item-price">650 L.E</span></div>
+                    <div class="item"><span class="item-name">Xross 4 Nano</span><span class="item-price">600 L.E</span></div>
+                    <div class="item"><span class="item-name">Xross 5 Mini</span><span class="item-price">525 L.E</span></div>
+                    <div class="sub-title">CARTRIDGES</div>
+                    <div class="item"><span class="item-name">Xross Cart 0.4/0.6/0.8Ω</span><span class="item-price">475 L.E</span></div>
+                </div>
+
+                <div class="section voopoo">
+                    <div class="section-title">VOOPOO</div>
+                    <div class="sub-title">PODS / DEVICES</div>
+                    <div class="item"><span class="item-name">Drag S3</span><span class="item-price">1,600 L.E</span></div>
+                    <div class="item"><span class="item-name">Drag X3</span><span class="item-price">1,600 L.E</span></div>
+                    <div class="sub-title">CARTRIDGES</div>
+                    <div class="item"><span class="item-name">PnP X 0.2/0.3/0.6/0.8Ω</span><span class="item-price">475 L.E</span></div>
+                </div>
+
+                <div class="section disposables">
+                    <div class="section-title">WAKA DISPOSABLES</div>
+                    <div class="sub-title">30,000 Puffs — 550 L.E</div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">Banana Raspberry</span></div>
+                        <div class="item"><span class="item-name">Sour Blue Raspberry</span></div>
+                        <div class="item"><span class="item-name">Strawberry Kiwi</span></div>
+                        <div class="item"><span class="item-name">Kiwi Dragon Berry</span></div>
+                        <div class="item"><span class="item-name">Watermelon</span></div>
+                        <div class="item"><span class="item-name">Mango</span></div>
+                        <div class="item"><span class="item-name">Sour Apple</span></div>
+                    </div>
+                    <div class="sub-title">15,000 Puffs — 350 L.E</div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">Aloe Grape Ice</span></div>
+                        <div class="item"><span class="item-name">Blueberry Cheesecake</span></div>
+                        <div class="item"><span class="item-name">Blueberry Sour Raspberry</span></div>
+                        <div class="item"><span class="item-name">Green Apple Ice</span></div>
+                        <div class="item"><span class="item-name">Kiwi Passion Guava</span></div>
+                        <div class="item"><span class="item-name">Lush Tobacco</span></div>
+                        <div class="item"><span class="item-name">Mango Ice</span></div>
+                        <div class="item"><span class="item-name">Mango Smoothie</span></div>
+                        <div class="item"><span class="item-name">Mixed Berries</span></div>
+                        <div class="item"><span class="item-name">Peach Ice</span></div>
+                        <div class="item"><span class="item-name">Strawberry Kiwi</span></div>
+                        <div class="item"><span class="item-name">Watermelon Ice</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 3 -->
+            <div class="column">
+                <div class="section disposables">
+                    <div class="section-title">ZOOKA BOX</div>
+                    <div class="sub-title">25,000 Puffs — 350 L.E</div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">Fizzy Cola</span></div>
+                        <div class="item"><span class="item-name">Mango</span></div>
+                        <div class="item"><span class="item-name">Strawmelon</span></div>
+                        <div class="item"><span class="item-name">Double Apple</span></div>
+                        <div class="item"><span class="item-name">Cranberry Spritz</span></div>
+                    </div>
+                </div>
+
+                <div class="section disposables">
+                    <div class="section-title">VNSN (DL)</div>
+                    <div class="sub-title">20,000 Puffs — 380 L.E</div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">Peach Ice</span></div>
+                        <div class="item"><span class="item-name">Fizzy Vimto</span></div>
+                        <div class="item"><span class="item-name">Love 666</span></div>
+                        <div class="item"><span class="item-name">Blackcurrant Ice</span></div>
+                        <div class="item"><span class="item-name">Grape Ice</span></div>
+                        <div class="item"><span class="item-name">Queen</span></div>
+                        <div class="item"><span class="item-name">Mix Berries</span></div>
+                    </div>
+                </div>
+
+                <div class="section disposables">
+                    <div class="section-title">AL FAKHER</div>
+                    <div class="sub-title">25,000 Puffs — 525 L.E</div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">Watermelon Kiwi</span></div>
+                        <div class="item"><span class="item-name">Blueberry Gum</span></div>
+                        <div class="item"><span class="item-name">Grape Berry</span></div>
+                        <div class="item"><span class="item-name">Blueberry Raspberry</span></div>
+                        <div class="item"><span class="item-name">Watermelon Lime</span></div>
+                        <div class="item"><span class="item-name">Blueberry Mint</span></div>
+                        <div class="item"><span class="item-name">Berry Ice</span></div>
+                        <div class="item"><span class="item-name">Strawberry Punch</span></div>
+                        <div class="item"><span class="item-name">Lush Ice</span></div>
+                        <div class="item"><span class="item-name">Two Apple</span></div>
+                    </div>
+                    <div class="sub-title">15,000 Puffs — 500 L.E</div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">Gum Mint</span></div>
+                        <div class="item"><span class="item-name">Mixed Berry</span></div>
+                        <div class="item"><span class="item-name">Strawberry Bunch</span></div>
+                        <div class="item"><span class="item-name">Grape Berry</span></div>
+                        <div class="item"><span class="item-name">Grape Mint</span></div>
+                        <div class="item"><span class="item-name">Blueberry Mint</span></div>
+                        <div class="item"><span class="item-name">Magic Love</span></div>
+                        <div class="item"><span class="item-name">Peach Ice</span></div>
+                        <div class="item"><span class="item-name">Watermelon Lime</span></div>
+                        <div class="item"><span class="item-name">Mango Cool</span></div>
+                        <div class="item"><span class="item-name">Berry Ice</span></div>
+                        <div class="item"><span class="item-name">Blueberry Raspberry</span></div>
+                        <div class="item"><span class="item-name">Lemon Mint</span></div>
+                        <div class="item"><span class="item-name">Lush Ice</span></div>
+                        <div class="item"><span class="item-name">Two Apple</span></div>
+                        <div class="item"><span class="item-name">Grape</span></div>
+                        <div class="item"><span class="item-name">Watermelon Kiwi</span></div>
+                        <div class="item"><span class="item-name">Blueberry Gum</span></div>
+                    </div>
+                </div>
+
+                <div class="section disposables">
+                    <div class="section-title">MAZAYA (DL)</div>
+                    <div class="sub-title">50,000 Puffs — 575 L.E</div>
+                    <div class="flavor-list">
+                        <div class="item"><span class="item-name">Strawberry</span></div>
+                        <div class="item"><span class="item-name">Gum Mint</span></div>
+                        <div class="item"><span class="item-name">Lemon Mint</span></div>
+                        <div class="item"><span class="item-name">Passion Fruit Mint Candy</span></div>
+                        <div class="item"><span class="item-name">Mango Mixed</span></div>
+                        <div class="item"><span class="item-name">Strawberry Cherry</span></div>
+                        <div class="item"><span class="item-name">Blueberry Mint</span></div>
+                        <div class="item"><span class="item-name">Mango Ice</span></div>
+                        <div class="item"><span class="item-name">Blueberry Gum</span></div>
+                        <div class="item"><span class="item-name">Lush Ice</span></div>
+                        <div class="item"><span class="item-name">Peach Ice</span></div>
+                        <div class="item"><span class="item-name">Grape Mint</span></div>
+                        <div class="item"><span class="item-name">Lemon Passion Fruit Grapefruit</span></div>
+                        <div class="item"><span class="item-name">Grape</span></div>
+                        <div class="item"><span class="item-name">Two Apple</span></div>
+                        <div class="item"><span class="item-name">Mixed Berry</span></div>
+                        <div class="item"><span class="item-name">Golden Mint</span></div>
+                        <div class="item"><span class="item-name">Berry Ice</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for shopping with us!</p>
+        </div>
+    </div>
+</body>
+</html>
